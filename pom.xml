@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>4.1.1</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath></relativePath>
     </parent>
     <groupId>com.yes666.im</groupId>
     <artifactId>IMSystem</artifactId>
@@ -15,9 +15,11 @@
     <description>IMSystem</description>
     <packaging>pom</packaging>
     <modules>
-        <module>IM-service</module>
-        <module>IM-pojo</module>
         <module>IM-common</module>
+        <module>IM-pojo</module>
+        <module>IM-service</module>
+
+
     </modules>
     <url/>
     <licenses>

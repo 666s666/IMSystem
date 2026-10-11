@@ -1,4 +1,42 @@
+server:
+  port: 8081
 spring:
   application:
-    name: IM-service
+    name: im-system
+  profiles:
+    active: dev
+  main:
+    allow-circular-references: true
+  datasource:
+    druid:
+      driver-class-name: ${im.datasource.driver-class-name}
+      url: jdbc:mysql://${im.datasource.host}:${im.datasource.port}/${im.datasource.database}
+      username: ${im.datasource.username}
+      password: ${im.datasource.password}
+mybatis:
+  mapper-locations: classpath*:mapper/**/*.xml
+  type-aliases-package: com.yes666.im.entity
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    com:
+      yes666:
+        mapper: debug
+        service: info
+        controller: info
+im:
+  jwt:
+    admin-ttl: 7200000
+    admin-secret-key: noyeskey
+    admin-token-name: token
+    user-secret-key: yesnokey
+    user-ttl: 7200000
+    user-token-name: token
+
+
+
+
+
+
 
